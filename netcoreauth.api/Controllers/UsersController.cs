@@ -17,13 +17,6 @@ namespace netcoreauth.api.Controllers
             userRepository = new UserRepository(Startup.connString);
         }
 
-        // GET: api/values
-        [HttpGet]
-        public IEnumerable<model.User> Get()
-        {
-            return userRepository.GetAll();
-        }
-
         [Route("checkemail")]
         [HttpGet]
         public dynamic CheckEmail(string email)
@@ -106,15 +99,6 @@ namespace netcoreauth.api.Controllers
 			return result;
 		}
 
-
-		// GET api/values/5
-		[HttpGet("{id}")]
-        public model.User Get(int id)
-        {
-            return userRepository.GetByID(id);
-        }
-
-
         [Route("sendactivemail/{email}")]
         [HttpGet]
         public dynamic SendActiveMail(string email)
@@ -192,23 +176,5 @@ namespace netcoreauth.api.Controllers
             };
             return result;
         }
-
-        /*
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]model.User user)
-        {
-            user.Id = id;
-            if (ModelState.IsValid)
-                userRepository.Update(user);
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-            userRepository.Delete(id);
-        }
-        */
     }
 }

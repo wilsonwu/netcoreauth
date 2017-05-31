@@ -48,26 +48,6 @@ namespace netcoreauth.model
             }
 		}
 
-		public IEnumerable<User> GetAll()
-		{
-			using (IDbConnection dbConnection = Connection)
-			{
-				dbConnection.Open();
-				return dbConnection.Query<User>("SELECT * FROM [user]");
-			}
-		}
-
-		public User GetByID(int id)
-		{
-			using (IDbConnection dbConnection = Connection)
-			{
-				string sQuery = "SELECT * FROM [user]"
-							   + " WHERE id = @Id";
-				dbConnection.Open();
-				return dbConnection.Query<User>(sQuery, new { Id = id }).FirstOrDefault();
-			}
-		}
-
         public User GetByEmailAndPassword(string email, string password)
         {
 			using (IDbConnection dbConnection = Connection)
@@ -150,28 +130,6 @@ namespace netcoreauth.model
 				}
 			}
 
-		}
-
-        public void Delete(int id)
-		{
-			using (IDbConnection dbConnection = Connection)
-			{
-				string sQuery = "DELETE FROM [user]"
-							 + " WHERE id = @Id";
-				dbConnection.Open();
-				dbConnection.Execute(sQuery, new { Id = id });
-			}
-		}
-
-		public void Update(User user)
-		{
-			using (IDbConnection dbConnection = Connection)
-			{
-				string sQuery = "UPDATE [user] SET email = @Email, password = @Password"
-					+ " WHERE id = @Id";
-				dbConnection.Open();
-				dbConnection.Query(sQuery, user);
-			}
 		}
 	}
 }

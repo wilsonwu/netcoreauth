@@ -24,17 +24,6 @@ namespace netcoreauth.model
             }
         }
 
-        public void Add(Token token)
-        {
-            using (IDbConnection dbConnection = Connection)
-            {
-                string sQuery = "INSERT INTO token (user_id, token_type, jwt_token)"
-                                + " VALUES(@User_Id, @Token_Type, @JWT_Token)";
-                dbConnection.Open();
-                dbConnection.Execute(sQuery, token);
-            }
-        }
-
         public void AddForUser(string email, string tokentype, string jwttoken)
         {
             using (IDbConnection dbConnection = Connection)
@@ -66,26 +55,6 @@ namespace netcoreauth.model
 
         }
 
-        public IEnumerable<Token> GetAll()
-        {
-            using (IDbConnection dbConnection = Connection)
-            {
-                dbConnection.Open();
-                return dbConnection.Query<Token>("SELECT * FROM token");
-            }
-        }
-
-        public Token GetByID(long id)
-        {
-            using (IDbConnection dbConnection = Connection)
-            {
-                string sQuery = "SELECT * FROM token"
-                               + " WHERE id = @Id";
-                dbConnection.Open();
-                return dbConnection.Query<Token>(sQuery, new { Id = id }).FirstOrDefault();
-            }
-        }
-
         public Token GetByTypeAndToken(string tokentype, string jwttoken)
         {
             using (IDbConnection dbConnection = Connection)
@@ -102,40 +71,6 @@ namespace netcoreauth.model
                 {
                     return null;
                 }
-            }
-        }
-
-        public void Delete(int id)
-        {
-            using (IDbConnection dbConnection = Connection)
-            {
-                string sQuery = "DELETE FROM token"
-                             + " WHERE id = @Id";
-                dbConnection.Open();
-                dbConnection.Execute(sQuery, new { Id = id });
-            }
-        }
-
-        public int DeleteByToken(string jwttoken)
-        {
-            using (IDbConnection dbConnection = Connection)
-            {
-                string sQuery = "DELETE FROM token"
-                             + " WHERE jwt_token = @JWT_Token";
-                dbConnection.Open();
-                return dbConnection.Execute(sQuery, new { JWT_Token = jwttoken });
-            }
-        }
-
-
-        public void Update(Token token)
-        {
-            using (IDbConnection dbConnection = Connection)
-            {
-                string sQuery = "UPDATE token SET user_id = @User_Id, token_type = @Token_Type, jwt_token = @JWT_Token"
-                    + " WHERE id = @Id";
-                dbConnection.Open();
-                dbConnection.Query(sQuery, token);
             }
         }
     }

@@ -11,22 +11,6 @@ namespace netcoreauth.api.Controllers
     [Route("api/[controller]")]
     public class UtilitiesController : Controller
     {
-        private readonly Mail mail;
-
-		public UtilitiesController()
-		{
-            mail = new Mail();
-		}
-
-		// GET: api/values
-		//[Authorize]
-        [Route("sendmail")]
-		[HttpGet]
-		public dynamic SendMail()
-		{
-            var result = mail.SendEmail("whfill@163.com", "admin@imoogoo.com", "test", "activelink");
-			return result;
-		}
 
 	}
 }

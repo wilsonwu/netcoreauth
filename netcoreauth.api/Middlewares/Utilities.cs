@@ -88,7 +88,7 @@ namespace netcoreauth.api
         {
             string sent = string.Empty;
             string activeToken = GenerateActiveToken(email);
-            sent = new Mail().SendEmailAsync(email, "admin@imoogoo.com", "PTE Ready account activation", "http://www.imoogoo.com/api/users/active/" + activeToken).Result;
+            sent = new Mail().SendEmailAsync(email, "xxxxxx@imoogoo.com", "Account activation", "http://www.xxxxxx.com/api/users/active/" + activeToken).Result;
             return sent;
         }
 
@@ -96,7 +96,7 @@ namespace netcoreauth.api
 		{
 			string sent = string.Empty;
 			string resetToken = GenerateResetToken(email);
-            sent = new Mail().SendEmailAsync(email, "admin@imoogoo.com", "PTE Ready account password reset", "http://www.imoogoo.com/api/users/active/" + resetToken).Result;
+            sent = new Mail().SendEmailAsync(email, "xxxxxx@imoogoo.com", "Account password reset", "http://www.xxxxxx.com/api/users/reset/" + resetToken).Result;
 			return sent;
 		}
 

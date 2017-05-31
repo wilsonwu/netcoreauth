@@ -58,7 +58,7 @@ namespace netcoreauth.model
                         587,
                         SecureSocketOptions.StartTls
                     );
-                    await smtp.AuthenticateAsync("admin@imoogoo.com", "aaaaaa");
+                    await smtp.AuthenticateAsync("xxxxxx@imoogoo.com", "xxxxxx");
                     await smtp.SendAsync(message);
                     await smtp.DisconnectAsync(true);
                 }
