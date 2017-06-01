@@ -3,10 +3,10 @@ ASP.NET Core with JWT Authentication Demo
 
 # Framework and SDK
 1. Base on .NET Core 1.1
-2. Swashbuckle for Swagger
+2. Swashbuckle for Swagger API documentation
 3. Dapper for ORM
 4. MailKit for email sending
-5. Azure SQL Database for my project
+5. Azure SQL Database (SQL Server standalone also fine)
 
 # Steps:
 1. Create your database with tables user and token, you can use the classes in model project to create fields, I will update database script later.
