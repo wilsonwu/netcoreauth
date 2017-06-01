@@ -24,3 +24,4 @@ ASP.NET Core with JWT Authentication Demo
 I will do below update soon
 1. Database script add
 2. More detail usage description for this demo
+3. Send mail async implementation
