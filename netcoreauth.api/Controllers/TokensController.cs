@@ -77,7 +77,7 @@ namespace netcoreauth.api.Controllers
 
 		[Route("refresh")]
         [Authorize]
-		[HttpPost]
+        [HttpPut]
 		public dynamic RefreshToken()
 		{
 			var authorization = HttpContext.Request.Headers["Authorization"].SingleOrDefault();

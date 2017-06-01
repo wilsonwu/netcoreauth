@@ -17,7 +17,7 @@ namespace netcoreauth.api.Controllers
             userRepository = new UserRepository(Startup.connString);
         }
 
-        [Route("checkemail")]
+        [Route("checkemail/{email}")]
         [HttpGet]
         public dynamic CheckEmail(string email)
         {
@@ -51,7 +51,7 @@ namespace netcoreauth.api.Controllers
         }
 
         [Route("active/{token}")]
-        [HttpGet]
+        [HttpPut]
         public dynamic ActiveUser(string token)
         {
 			dynamic result;
@@ -75,7 +75,7 @@ namespace netcoreauth.api.Controllers
         }
 
 		[Route("reset/{token}")]
-        [HttpPost]
+        [HttpPut]
         public dynamic ResetPassword(string token, [FromBody]User user)
 		{
             dynamic result;
