@@ -15,7 +15,7 @@ ASP.NET Core with JWT Authentication Demo
 - Active Token: JWT token genrate by POST: /api/users the Create Account API and GET: /api/users/sendactiveemail/{token} the Send Active Account Mail API, use for active account, it has been stored in Token table till finish account activation 
 - Rest Password Token: JWT token genrate by GET: /api/users/sendresetmail/{token} the Send Reset Password Mail API, use for reset account password, it has been stored in Token table till finish password update. 
 
-# Steps:
+# Steps to Run:
 1. Create your database with tables user and token, you can use the classes in model project to create fields, I will update database script later.
 2. Update database connection string in appsettings.json
 3. If you want to use mail sending for account activation, please update the Mail class in model project, suggest to use gmail, I tested by gamil successful in my project. 
@@ -25,7 +25,7 @@ ASP.NET Core with JWT Authentication Demo
 7. Get the token in you database token table, then call PUT: /api/users/active/{token} to active account
 8. Call POST: /api/tokens/access to use your email and password login and get tokens (access token and refresh token)
 9. Call GET: /api/tests with header: Authorization: Bearer {token}, both access token and refresh token work fine
-10. Get response: ["value1", "value2"] without 401 HTTP code, that means you get success.
+10. Get response: ["value1", "value2"] without 401 HTTP code from GET: /api/tests, that means you get success.
 
 # TODO
 1. Database script add
