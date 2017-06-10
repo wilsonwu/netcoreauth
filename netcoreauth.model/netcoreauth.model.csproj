@@ -17,4 +17,10 @@
     <PackageReference Include="Dapper" Version="1.50.2" />
     <PackageReference Include="MailKit" Version="1.16.1" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\sqlserver.sql" />
+  </ItemGroup>
 </Project>
