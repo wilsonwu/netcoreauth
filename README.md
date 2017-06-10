@@ -16,7 +16,7 @@ ASP.NET Core with JWT Authentication Demo
 - Rest Password Token: JWT token genrate by GET: /api/users/sendresetmail/{token} the Send Reset Password Mail API, use for reset account password, it has been stored in Token table till finish password update. 
 
 # Steps to Run:
-1. Create your database with tables user and token, you can use the classes in model project to create fields, I will update database script later.
+1. Create your database manually and run the user and token tables create script under model project Scripts folder.
 2. Update database connection string in appsettings.json
 3. If you want to use mail sending for account activation, please update the Mail class in model project, suggest to use gmail, I tested by gamil successful in my project. 
 4. After all, try http://[localhost]:[port]/swagger/ui, to get API document
