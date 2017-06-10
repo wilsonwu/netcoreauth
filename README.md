@@ -31,3 +31,4 @@ ASP.NET Core with JWT Authentication Demo
 1. ~~Database script add~~
 2. ~~More detail usage description for this demo~~
 3. Send mail async implementation
+4. Add Postman script samples for API calls
