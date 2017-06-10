@@ -10,10 +10,10 @@ ASP.NET Core with JWT Authentication Demo
 - `Azure SQL Database` (SQL Server standalone also fine)
 
 # Token Policy
-- ***`Access Token`***: JWT token genrate by `POST: /api/tokens/access` the Sign In API, can be refreshed, the access token has not been stored
-- ***`Refresh Token`***: JWT token genrate by `POST: /api/tokens/access` the Sign In API, will be replaced by new one if call refresh API, the refresh token has not been stored
-- ***`Active Token`***: JWT token genrate by `POST: /api/users` the Create Account API and `GET: /api/users/sendactiveemail/{token}` the Send Active Account Mail API, use for active account, it has been stored in Token table till finish account activation 
-- ***`Rest Password Token`***: JWT token genrate by `GET: /api/users/sendresetmail/{token}` the Send Reset Password Mail API, use for reset account password, it has been stored in Token table till finish password update. 
+- **Access Token**: JWT token genrate by `POST: /api/tokens/access` the Sign In API, can be refreshed, the access token has not been stored
+- **Refresh Token**: JWT token genrate by `POST: /api/tokens/access` the Sign In API, will be replaced by new one if call refresh API, the refresh token has not been stored
+- **Active Token**: JWT token genrate by `POST: /api/users` the Create Account API and `GET: /api/users/sendactiveemail/{token}` the Send Active Account Mail API, use for active account, it has been stored in Token table till finish account activation 
+- **Rest Password Token**: JWT token genrate by `GET: /api/users/sendresetmail/{token}` the Send Reset Password Mail API, use for reset account password, it has been stored in Token table till finish password update. 
 
 # Steps to Run:
 1. Create your database manually and run the user and token tables create script under `netcoreauth.model` project `Scripts` folder.
