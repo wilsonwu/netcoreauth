@@ -13,6 +13,7 @@ using System.Text;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Cors.Internal;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace netcoreauth.api
 {
@@ -56,7 +57,10 @@ namespace netcoreauth.api
             {
                 jsonOptions.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
             });
-            services.AddSwaggerGen();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -108,9 +112,12 @@ namespace netcoreauth.api
 
             app.UseMvc();
 			app.UseSwagger();
-			app.UseSwaggerUi();
-			//http://[localhost]/swagger/ui
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
+            //http://[localhost]:[port]/swagger
 
-		}
+        }
     }
 }
