@@ -4,7 +4,7 @@ ASP.NET Core with JWT Authentication Demo
 # Framework and SDK
 - Compatibile for `Visual Studio 2017` and `Visual Studio for Mac`
 - Base on `.NET Core 1.1`
-- `Swashbuckle` for Swagger API documentation
+- `Swashbuckle.AspNetCore` for Swagger API documentation
 - `Dapper` for ORM
 - `MailKit` for email sending
 - `Azure SQL Database` (SQL Server standalone also fine)
@@ -19,7 +19,7 @@ ASP.NET Core with JWT Authentication Demo
 1. Create your database manually and run the user and token tables create script under `netcoreauth.model` project `Scripts` folder.
 2. Update database connection string in `appsettings.json`
 3. If you want to use mail sending for account activation, please update the `Mail.cs` class file in `netcoreauth.model` project, suggest to use Gmail, I tested by Gmail successful in my project. 
-4. After all, try `http://[localhost]:[port]/swagger/ui`, to get API document
+4. After all, try `http://[localhost]:[port]/swagger`, to get API document
 5. `GET: /api/tests/1` this API without Auth, `GET: /api/tests` this API with Auth
 6. Call `POST: /api/users` to create account
 7. Get the token in you database token table, then call `PUT: /api/users/active/{token}` to active account
