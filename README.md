@@ -24,13 +24,13 @@ ASP.NET Core with JWT Authentication Demo
 6. Call `POST: /api/users` to create account
 7. Get the token in you database token table, then call `PUT: /api/users/active/{token}` to active account
 8. Call `POST: /api/tokens/access` to use your email and password login and get tokens (access token and refresh token)
-```
-POST /api/tokens/access
-{
-  "email": "xxxx@xxxx.com",
-  "password": "xxxxxxxxxxxxxxxxxxxxxxx"
-}
-```
+    ```
+    POST /api/tokens/access
+    {
+      "email": "xxxx@xxxx.com",
+      "password": "xxxxxxxxxxxxxxxxxxxxxxx"
+    }
+    ```
 9. Call `GET: /api/tests` with header: `Authorization: Bearer {token}`, both access token and refresh token work fine
 10. Get response: `["value1", "value2"]` without `401` HTTP code from `GET: /api/tests`, that means you get success.
 
