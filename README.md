@@ -3,7 +3,7 @@ ASP.NET Core with JWT Authentication Demo
 
 # Framework and SDK
 - Compatibile for `Visual Studio 2017` and `Visual Studio for Mac`
-- Base on `.NET Core 1.1`
+- Base on `.NET Core 2.0`
 - `Swashbuckle.AspNetCore` for Swagger API documentation
 - `Dapper` for ORM
 - `MailKit` for email sending
@@ -43,5 +43,5 @@ ASP.NET Core with JWT Authentication Demo
 2. ~~More detail usage description for this demo~~
 3. Send mail async implementation
 4. Add Postman script samples for API calls
-5. Upgrade to .NET Core 2.0
+5. ~~Upgrade to .NET Core 2.0~~
 6. Add API version support
